@@ -1,9 +1,8 @@
-
-
 function computerPlay() {
+  // Generate random number
   let choiceNumber = Math.random();
 
-  
+  // Use number to assign a computer choice
   if (choiceNumber < 0.33) {
     return "rock";
   } else if (choiceNumber < 0.66) {
@@ -14,12 +13,15 @@ function computerPlay() {
 }
 
 function playerPlay() {
+  // Prompt user to select a choice
   return prompt("Choose rock, paper or scissors: ")
 }
 
 function playRound(playerSelection, computerSelection) {
+  // Convert user input to lower case 
   playerSelection = playerSelection.toLowerCase();
 
+  // Compare user and computer choices to determine the winner. 
   if (computerSelection == "rock") {
     if (playerSelection == "paper") {
       return "You win!";
@@ -53,37 +55,36 @@ function playRound(playerSelection, computerSelection) {
     }
     }
 
-// const playerSelection = "rock";
-// const computerSelection = computerPlay();
-// console.log(playRound(playerSelection, computerSelection));  
-
 function game() {
+  // Intialise the scores
   let playerScore = 0;
   let computerScore = 0;
   let drawScore = 0;
 
-
+  // Loop through five rounds, counting the winner of each
   for (i = 0; i < 5; i++) {
     result = playRound(playerPlay(), computerPlay());
+    console.log(result);
     if (result == "You win!") {
-      console.log("Hells, yes!")
       playerScore += 1;
-      console.log(`Player Score: ${playerScore}`);
     } else if (result == "You lose!") {
-      console.log("Oh, no!");
       computerScore += 1;
-      console.log(`Computer Score: ${computerScore}`);
     } else if (result == "It's a draw") {
       drawScore += 1;
-      console.log(`Draw Score: ${drawScore}`);
     }
-
   }
-  console.log(playerScore);
-  console.log(computerScore);
-  console.log(drawScore);
-  
-}
 
+  // Log the scores 
+  console.log(`Player wins: ${playerScore}`);
+  console.log(`Computer wins: ${computerScore}`);
+  console.log(`Draws: ${drawScore}`);
+
+  // Declare the overall winner 
+  if (playerScore > computerScore) {
+    console.log("Player wins the game!");
+  } else {
+    console.log("Computer wins the game!");
+  }
+}
 
 game();
