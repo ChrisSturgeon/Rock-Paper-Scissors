@@ -5,62 +5,56 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <title>Rock Paper Scissors</title>
 </head>
+
 <body>
-
   <div class="container">
-
     <div class="header">
       <h1 id="title">Rock, Paper, Scissors</h1>
-
     </div>
-
-    </div>
-
-
     <div class="headers">
-      <div class="aHeader"><h1>You</h1></div>
-      <div class="aHeader"></div>
-      <div class="aHeader"><h1>Computer</h1></div>
+      <div class="header"><h1>You</h1></div>
+      <div class="header"></div>
+      <div class="header"><h1>Computer</h1></div>
     </div>
     <div class="arena">
       <div class="user">
-        <input type="image" class="selectionBtns" id="rock" src="/images/rock.png" alt="rock"></input>
-        <input type="image" class="selectionBtns" id="paper" src="/images/paper.png" alt="paper"></input>
-        <input type="image" class="selectionBtns" id="scissors" src="/images/scissors.png" alt="scissors"></input>
+        <input type="image" class="selectionBtns" id="rock" src="Images/rock.png" alt="rock"></input>
+        <input type="image" class="selectionBtns" id="paper" src="Images/paper.png" alt="paper"></input>
+        <input type="image" class="selectionBtns" id="scissors" src="Images/scissors.png" alt="scissors"></input>
       </div>
       <div class="scores">
-        <div id="playOutcome" class="gameresult"></div>
-        
-        <div class="scoreArea">
+        <div id="playOutcome" class="gameresult">First to five. Go!</div>
+        <div class="scores scoreArea">
           <div id="scoreboard">
-            <table>
-              <tr>
-                <th></th>
-                <th>Round</th>
-                <th>Games</th>
-              </tr>
-              <tr>
-                <td>Won</td>
-                <td id="rWins">0</td>
-                <td id ="gWins">0</td>
-              </tr>
-              <tr>
-                <td>Lost</td>
-                <td id="rLost">0</td>
-                <td id="gLost">0</td>
-              </tr>
-              <tr>
-                <td>Drawn</td>
-                <td id="rDrawn">0</td>
-                <td>0</td>
-              </tr>
-            </table>
+            <div class="tableWrapper">
+              <table>
+                <tr>
+                  <th></th>
+                  <th>Round</th>
+                  <th>Games</th>
+                </tr>
+                <tr>
+                  <td>Won</td>
+                  <td id="rWins">0</td>
+                  <td id ="gWins">0</td>
+                </tr>
+                <tr>
+                  <td>Lost</td>
+                  <td id="rLost">0</td>
+                  <td id="gLost">0</td>
+                </tr>
+                <tr>
+                  <td>Drawn</td>
+                  <td id="rDrawn">0</td>
+                  <td>0</td>
+                </tr>
+              </table>
+            </div>
           </div>
           <div>
             <button id="resetBtn" onclick="reset()">Reset</button>
@@ -69,21 +63,14 @@
       </div>
       <div id="computerChoice" class="computer">
         <div id="computerIcon">
-          <img src="/images/question.png" alt="questionMark" width="100px" height="100px">
+          <img src="Images/question.png" alt="questionMark" width="100px" height="100px">
         </div>
       </div>
     </div>
     </div>
-    <div>
-      
-    </div>
-    
-  
-  </div>
 
   <!-- Script here -->
-
-  <script src="/rpsCode.js"></script>
+  <script src="rpsCode.js"></script>
   
 </body>
 </html> 

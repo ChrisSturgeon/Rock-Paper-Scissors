@@ -1,7 +1,7 @@
-
-
-div {
+body {
+  background-color: white;
   font-family: 'Roboto', sans-serif;
+  color: #3d5073;
 }
 
 .container {
@@ -16,23 +16,11 @@ div {
 
 #title {
   padding: 15px;
-  border: 1px solid black;
-  border-radius: 25px;
-  
+  border: 1px solid #7b7b7b;
+  border-radius: 15px;
 }
 
-.headers {
-  display:grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
-}
-
-.aHeader {
-  display:flex;
-  justify-content: center;
-}
-
-.arena {
+.headers, .arena {
   display:grid;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
@@ -43,6 +31,7 @@ div {
   flex-direction: column;
   align-items: center;
   gap: 50px;
+  border-right: 1px solid rgb(184, 184, 184)
 }
 
 .selectionBtns {
@@ -56,6 +45,11 @@ div {
   transform: scale(1.15);
 }
 
+#computerIcon {
+  height: 100px;
+  width: 100px;
+}
+
 .scores {
   display: flex;
   flex-flow: column nowrap;
@@ -64,11 +58,7 @@ div {
 }
 
 .scoreArea {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-evenly;
   align-items: center;
-
 }
 
 .gameresult {
@@ -86,28 +76,41 @@ div {
   text-align: center;
 }
 
+.tableWrapper {
+  overflow: auto;
+  border-radius: 15px;
+  border: 1px solid #7b7b7b;
+}
+
 table {
   width:100%;
   border-collapse: collapse;
+  border-style: hidden;
 }
 
 th, td {
-  padding: 4px;
-  border: 1px solid rgb(175, 174, 174);
-
+  padding: 5px;
+  border: 1px solid #7b7b7b;
 }
 
 #resetBtn {
   margin-top: 10px;
+  color:white;
+  background-color: #3d5073;
+  border-radius:15px;
+  border: none;
+  transition-property: all;
+  transition-duration: 0.2s
+}
+
+#resetBtn:hover {
+  transform: scale(1.25);
 }
 
 .computer {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-left: 1px solid rgb(184, 184, 184)
 }
 
-#computerIcon {
-  height: 100px;
-  width: 100px;
-}
