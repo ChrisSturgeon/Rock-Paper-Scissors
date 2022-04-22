@@ -1,0 +1,114 @@
+
+
+div {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+#title {
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 25px;
+  
+}
+
+.headers {
+  display:grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+
+.aHeader {
+  display:flex;
+  justify-content: center;
+}
+
+.arena {
+  display:grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.selectionBtns {
+  height: 100px;
+  width:100px;
+  transition-property: all;
+  transition-duration: 0.3s;
+}
+
+.selectionBtns:hover {
+  transform: scale(1.15);
+}
+
+.scores {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+.scoreArea {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+
+.gameresult {
+  font-size: 22px;
+  font-weight: ;
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+#scoreboard {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+table {
+  width:100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 4px;
+  border: 1px solid rgb(175, 174, 174);
+
+}
+
+#resetBtn {
+  margin-top: 10px;
+}
+
+.computer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#computerIcon {
+  height: 100px;
+  width: 100px;
+}

@@ -12,79 +12,92 @@ function computerPlay() {
   }
 }
 
-function playerPlay() {
-  // Prompt user to select a choice
-  return prompt("Choose rock, paper or scissors: ")
-}
 
-function playRound(playerSelection, computerSelection) {
-  // Convert user input to lower case 
-  playerSelection = playerSelection.toLowerCase();
+var enemyScore = 0;
+var userScore = 0;
+var draws = 0;
+var gameresult = '';
+var totalscores = '';
+var totalUserScore = 0;
+var totalComputerScore = 0;
 
-  // Compare user and computer choices to determine the winner. 
-  if (computerSelection == "rock") {
-    if (playerSelection == "paper") {
-      return "You win!";
-    } else if (playerSelection == "scissors") {
-      return "You lose!";
-    } else if (playerSelection == "rock") {
-      return "It's a draw";
-    } else {
-      return "You did not pick rock, paper or scissors.";
-    }    
-    } else if (computerSelection == "paper") {
-      if (playerSelection == "scissors") {
-        return "You win!";
-      } else if (playerSelection == "rock") {
-        return "You lose!";
-      } else if (playerSelection == "paper") {
-        return "It's a draw";
-      } else {
-        return "You did not pick rock, paper or scissors.";
-      }
-    } else if (computerSelection == "scissors") {
-      if (playerSelection == "rock") {
-        return "You win!";
-      } else if (playerSelection == "paper") {
-        return "You lose!";
-      } else if (playerSelection == "scissors") {
-        return "It's a draw";
-      } else {
-        return "You did not pick rock, paper or scissors.";
-      }
+document.getElementById('rock').addEventListener('click', function() { playRound('rock');});
+document.getElementById('paper').addEventListener('click', function() { playRound('paper');});
+document.getElementById('scissors').addEventListener('click', function() { playRound('scissors');});
+
+function playRound(weapon) {
+
+
+  
+  var computerChoice = computerPlay()
+  var result = '';
+
+  if (computerChoice === "rock") {
+    if (weapon === "paper") {
+      result = "Paper beats rock. You win!";
+      userScore += 1;
+    } else if (weapon === "rock") {
+      result = "You draw!";
+      draws += 1;
+    } else if (weapon === "scissors") {
+      result = "Rock beats scissors. You lose!";
+      enemyScore += 1;
     }
+  } else if (computerChoice === "paper") {
+    if (weapon === "scissors") {
+      result = "Sissors beats paper. You win!";
+      userScore += 1;
+    } else if (weapon === "paper") {
+      result = "You draw!"
+      draws += 1;
+    } else if (weapon === "rock") {
+      result = "Rock beats scissors. You lose!"
+      enemyScore += 1;
     }
-
-function game() {
-  // Intialise the scores
-  let playerScore = 0;
-  let computerScore = 0;
-  let drawScore = 0;
-
-  // Loop through five rounds, counting the winner of each
-  for (i = 0; i < 5; i++) {
-    result = playRound(playerPlay(), computerPlay());
-    console.log(result);
-    if (result == "You win!") {
-      playerScore += 1;
-    } else if (result == "You lose!") {
-      computerScore += 1;
-    } else if (result == "It's a draw") {
-      drawScore += 1;
+  } else if (computerChoice === "scissors") {
+    if (weapon === "rock") {
+      result = "Rock beats scissors. You win!";
+      userScore += 1;
+    } else if (weapon === "scissors") {
+      result = "You draw!"
+      draws += 1;
+    } else if (weapon === "paper") {
+      result = "Scissors beats paper. You lose!"
+      enemyScore += 1;
     }
   }
 
-  // Log the scores 
-  console.log(`Player wins: ${playerScore}`);
-  console.log(`Computer wins: ${computerScore}`);
-  console.log(`Draws: ${drawScore}`);
-
-  // Declare the overall winner 
-  if (playerScore > computerScore) {
-    console.log("Player wins the game!");
-  } else {
-    console.log("Computer wins the game!");
+  if (userScore >= 5) {
+    gameresult = 'User wins!'
+    enemyScore = 0;
+    userScore = 0;
+    draws = 0;
+    totalUserScore += 1;
+  } else if (enemyScore >=5) {
+    gameresult = "Computer wins!"
+    enemyScore = 0;
+    userScore = 0;
+    draws = 0;
+    totalComputerScore += 1;
   }
+  document.getElementById('playOutcome').innerText = result;
+  document.getElementById('rWins').innerText = userScore;
+  document.getElementById('rLost').innerText = enemyScore;
+  document.getElementById('rDrawn').innerText = draws;
+  document.getElementById('gWins').innerText = totalUserScore;
+  document.getElementById('gLost').innerText = totalComputerScore;
+
+  if (computerChoice === "rock") {
+    document.getElementById('computerIcon').innerHTML = "<img src=\"/images/rock.png\" alt=\"rock\" width=\"100px\" height=\"100px\">"
+  } else if (computerChoice === "paper") {
+    document.getElementById('computerIcon').innerHTML = "<img src=\"/images/paper.png\" alt=\"paper\" width=\"100px\" height=\"100px\">"
+  } else if (computerChoice === "scissors") {
+    document.getElementById('computerIcon').innerHTML = "<img src=\"/images/scissors.png\" alt=\"scissors\" width=\"100px\" height=\"100px\">"
+
+  }
+
 }
 
-game();
+function reset () {
+  window.location.reload();
+}
