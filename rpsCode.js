@@ -95,19 +95,6 @@ function playRound(weapon) {
   document.getElementById('rDrawn').innerText = draws;
   document.getElementById('gWins').innerText = totalUserScore;
   document.getElementById('gLost').innerText = totalComputerScore;
-<<<<<<< HEAD
-
-  if (computerChoice === "rock") {
-    document.getElementById('computerIcon').innerHTML = "<img src=\"Images/rock.png\" alt=\"rock\" width=\"100px\" height=\"100px\">"
-  } else if (computerChoice === "paper") {
-    document.getElementById('computerIcon').innerHTML = "<img src=\"Images/paper.png\" alt=\"paper\" width=\"100px\" height=\"100px\">"
-  } else if (computerChoice === "scissors") {
-    document.getElementById('computerIcon').innerHTML = "<img src=\"Images/scissors.png\" alt=\"scissors\" width=\"100px\" height=\"100px\">"
-
-  }
-
-=======
->>>>>>> rps-ui
 }
 
 // Reset scores by refreshing the page
